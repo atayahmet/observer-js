@@ -5,6 +5,6 @@
   </a>
 </p>
 
-<h1 align="center">Create subjects and add it callback as observer. ⚡️</h1>
+<h1 align="center">Create subjects and add observer callback. Finaly run those observes asynchronously. ⚡️</h1>
 
 Simple and light-weight observable pub/sub library. You can create multiple subject and observers and manage these objects using features.
