@@ -1,0 +1,53 @@
+{
+  "name": "@atayahmet/observer-js",
+  "version": "0.0.1-alpha.1",
+  "description": "Observer js created based on observer pattern criteria. Create subjects and add it callback as observers.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test && jest --config jestconfig.json --no-cache",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atayahmet/observer-js.git"
+  },
+  "keywords": [
+    "observer",
+    "subject",
+    "async",
+    "sub",
+    "pub"
+  ],
+  "author": "Ahmet ATAY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atayahmet/observer-js/issues"
+  },
+  "homepage": "https://github.com/atayahmet/observer-js#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.9",
+    "cross-env": "^5.2.0",
+    "jest": "^24.3.1",
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3333"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {}
+}
