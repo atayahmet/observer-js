@@ -1,7 +1,7 @@
 {
   "name": "@atayahmet/observer-js",
   "version": "0.0.1-alpha.1",
-  "description": "Observer js created based on observer pattern criteria. Create subjects and add it callback as observers.",
+  "description": "Observer js created based on observer pattern criteria. Create subjects and add it callback as observer.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
