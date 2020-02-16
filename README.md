@@ -7,8 +7,6 @@
 
 <h1 align="center">Create subjects and add observer callback. Finaly run those observes asynchronously. ⚡️</h1>
 
-<a href="https://circleci.com/gh/badges/shields/tree/master">
-  <img src="https://travis-ci.org/atayahmet/observer-js.svg?branch=master" alt="build status">
-</a>
+<img alt="Travis (.org)" src="https://img.shields.io/travis/atayahmet/observer-js?style=flat-square">
 
 Simple and light-weight observable pub/sub library. You can create multiple subject and observers and manage these objects using features.
