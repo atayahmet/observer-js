@@ -38,8 +38,6 @@ const subject = new Subject;
 // start subscribe
 subject.subscribe((data) => console.log('Test subscribe 1!', data));
 subject.subscribe((data) => console.log('Test subscribe 2!', data));
-subject.subscribe((data) => console.log('Test subscribe 3!', data));
-subject.subscribe((data) => console.log('Test subscribe 4!', data));
 
 // run all observers.
 subject.notify('Hello World!');
@@ -67,3 +65,37 @@ subject.cancel();
 // this will not notify to all observers one time
 subject.notify();
 ```
+
+**Pause and Resume observers:**
+
+```js
+subject.subscribe(() => console.log('Test subscribe 1!'));
+subject.subscribe(() => console.log('Test subscribe 2!'));
+
+// paused all observers.
+subject.pause();
+
+// this will not notify observers until you resume observers.
+subject.notify();
+```
+
+**Reset the subject completely:**
+
+```js
+subject.reset();
+```
+
+**Get total count of active observers:**
+
+```js
+const sub1$ = subject.subscribe(() => console.log('Test subscribe 1!'));
+const sub2$ = subject.subscribe(() => console.log('Test subscribe 2!'));
+
+subject.size() // output: 2
+
+sub1$.unsubscribe();
+
+subject.size(); // output: 1
+```
+
+**onCompleted:**
