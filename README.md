@@ -54,3 +54,16 @@ const sub$ = subject.subscribe((data) => console.log('Remove subscription!', dat
 sub$.unsubscribe();
 subject.notify();
 ```
+
+**Cancel all observers one time:**
+
+```js
+subject.subscribe(() => console.log('Test subscribe 1!'));
+subject.subscribe(() => console.log('Test subscribe 2!'));
+
+// cancelled.
+subject.cancel();
+
+// this will not notify to all observers one time
+subject.notify();
+```
