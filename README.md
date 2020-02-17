@@ -50,7 +50,6 @@ const subject = new Subject;
 const sub$ = subject.subscribe((data) => console.log('Remove subscription!', data));
 
 sub$.unsubscribe();
-subject.notify();
 ```
 
 **Cancel all observers in one time:**
