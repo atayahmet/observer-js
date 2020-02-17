@@ -5,8 +5,52 @@
   </a>
 </p>
 
-<h1 align="center">Create subjects and add observer callback. Finaly run those observes asynchronously. ⚡️</h1>
+<h1 align="center">Create subjects and add observers as callback. ⚡️</h1>
 
-<img alt="Travis (.org)" src="https://img.shields.io/travis/atayahmet/observer-js?style=flat-square"> <img src="https://img.shields.io/npm/v/@atayahmet/observer-js?style=flat-square" />
+[![Travis CI](https://img.shields.io/travis/atayahmet/observer-js?style=flat-square)](https://img.shields.io/travis/atayahmet/observer-js?style=flat-square) [![Travis CI](https://img.shields.io/npm/v/@atayahmet/observer-js?style=flat-square)](https://img.shields.io/npm/v/@atayahmet/observer-js?style=flat-square) ![npm](https://img.shields.io/npm/dw/@atayahmet/observer-js?style=flat-square) ![GitHub](https://img.shields.io/github/license/atayahmet/observer-js?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/atayahmet/observer-js?style=flat-square)
 
 Simple and light-weight observable pub/sub library. You can create multiple subject and observers and manage these objects using features.
+
+>**Note:** All subscriptions work asynchronously.
+
+## Installation
+
+Use the package manager [yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com) to install `react-slidify`.
+
+```sh
+$ npm i @atayahmet/observer-js --save
+```
+
+```sh
+$ yarn add @atayahmet/observer-js
+```
+
+## Usage
+```js
+import Subject from '@atayahmet/observer-js';
+```
+
+**Create new subject:**
+
+```js
+const subject = new Subject;
+
+// start subscribe
+subject.subscribe((data) => console.log('Test subscribe 1!', data));
+subject.subscribe((data) => console.log('Test subscribe 2!', data));
+subject.subscribe((data) => console.log('Test subscribe 3!', data));
+subject.subscribe((data) => console.log('Test subscribe 4!', data));
+
+// run all observers.
+subject.notify('Hello World!');
+```
+
+**Unsubscribe an observer:**
+
+```js
+const subject = new Subject;
+const sub$ = subject.subscribe((data) => console.log('Remove subscription!', data));
+
+sub$.unsubscribe();
+subject.notify();
+```
