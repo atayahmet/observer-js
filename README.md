@@ -53,7 +53,7 @@ sub$.unsubscribe();
 subject.notify();
 ```
 
-**Cancel all observers one time:**
+**Cancel all observers in one time:**
 
 ```js
 subject.subscribe(() => console.log('Test subscribe 1!'));
