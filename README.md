@@ -76,6 +76,9 @@ subject.pause();
 
 // this will not notify observers until you resume observers.
 subject.notify();
+
+// activate all observers again.
+subject.resume();
 ```
 
 **Reset the subject completely:**
@@ -98,3 +101,11 @@ subject.size(); // output: 1
 ```
 
 **onCompleted:**
+
+```js
+subject.subscribe((data) => console.log('Test subscribe 1!'));
+subject.subscribe((data) => console.log('Test subscribe 2!'));
+
+subject.onCompleted(() => console.log('All observers worked successfuly!'));
+subject.notify('Go!');
+```
