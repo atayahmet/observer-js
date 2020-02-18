@@ -13,7 +13,7 @@ export default class Subject {
     };
   }
 
-  public async notify(data: any): Promise<any | undefined> {
+  public async notify(data?: any): Promise<any | undefined> {
     if (this._paused === true) {
       return;
     }
