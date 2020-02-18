@@ -46,6 +46,24 @@ describe('Subject tests', () => {
     }, 30);
   });
 
+  test('catch any errors when run an observer', done => {
+    const errorHandler = jest.fn();
+    const copletedHandler = jest.fn();
+
+    subject.onCompleted(copletedHandler);
+    subject.subscribe(() => {
+      throw 'Something went wrong';
+    }, errorHandler);
+
+    subject.notify();
+
+    setTimeout(() => {
+      expect(errorHandler).toHaveBeenCalledWith('Something went wrong');
+      expect(copletedHandler).toHaveBeenCalled();
+      done();
+    }, 100);
+  });
+
   test('pause/resume all observers', done => {
     const observer1 = jest.fn();
     const observer2 = jest.fn();
