@@ -15,7 +15,7 @@ Simple light-weight observable pub/sub library. You can create multiple subject 
 
 ## Installation
 
-Use the package manager [yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com) to install `react-slidify`.
+Use the package manager [yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com) to install.
 
 ```sh
 $ npm i @atayahmet/observer-js --save
